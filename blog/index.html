@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/bundle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">YUNHA Engineering</h3>
+      <h6 class="mdc-drawer__subtitle">hadbsgk@gmail.com</h6>
+    </div>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="/blog" aria-current="page">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">book</i>
+          <span class="mdc-list-item__text">Blog</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">Resume</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">work</i>
+          <span class="mdc-list-item__text">Project</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+        <span class="mdc-top-app-bar__title">
+          <a href="/"><img src="/src/images/logo.png" alt="YUNHA Industry" height="42"></a>
+        </span>
+      </section>
+
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <div class="mdc-tab-bar" role="tablist">
+          <div class="mdc-tab-scroller mdc-tab-scroller--align-end">
+            <div class="mdc-tab-scroller__scroll-area">
+              <div class="mdc-tab-scroller__scroll-content"><a href="/blog/">
+                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
+                    tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label">Blog</span>
+                    </span>
+                    <span class="mdc-tab-indicator mdc-tab-indicator--active yunha-inc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </a><a href="/about/">
+                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
+                    tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label">About</span>
+                    </span>
+                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </a><button class="mdc-tab yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="false" tabindex="-1">
+                  <span class="mdc-tab__content">
+                    <span class="mdc-tab__text-label">Resume</span>
+                  </span>
+                  <span class="mdc-tab-indicator yunha-inc-tab-indicator">
+                    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                  </span>
+                  <span class="mdc-tab__ripple"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+  <main class="main-content" id="main-content">
+    
+<div class="yunha-inc--fixed-adjust">
+  <div class="y-layout-container mdc-layout-grid">
+    <div class="mdc-layout-grid__inner yunha-inc-title">
+      <div class="mdc-layout-grid__cell--span-2"></div>
+      <div class="mdc-layout-grid__cell--span-8">
+        <h1 class="mdc-typography--headline1">Blog</h1>
+        <h2 class="mdc-typography--subtitle1">My latest news, updates, and stories for developers</h2>
+      </div>
+      <div class="mdc-layout-grid__cell--span-2"></div>
+    </div>
+  </div>
+
+  <div class="y-layout-container mdc-layout-grid">
+    <div class="mdc-layout-grid__inner"><a href='/my-first-post/' class="mdc-layout-grid__cell w-card">
+  <div class="mdc-card mdc-card--outlined yunha-inc-card">
+    <div class="yunha-inc-image mdc-card__media mdc-card__media--square"
+      style="background-image: url('/my-first-post/hero.jpeg')"></div>
+    <div class="yunha-inc-card__text-label">My First blog post</div>
+    <div class="yunha-inc-card__secondary mdc-typography--body2">My first blog post using 11ty and Material Design Component. </div>
+    <div class="mdc-card__actions">
+      <div class="mdc-card__action-buttons">
+        <button class="mdc-button mdc-card__action mdc-card__action--button adopt-form__button">
+          <i class="material-icons mdc-button__icon">favorite_border</i> <span>Show</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</a><a href='/my-second-post/' class="mdc-layout-grid__cell w-card">
+  <div class="mdc-card mdc-card--outlined yunha-inc-card">
+    <div class="yunha-inc-image mdc-card__media mdc-card__media--square"
+      style="background-image: url('/my-second-post/hero.jpeg')"></div>
+    <div class="yunha-inc-card__text-label">My Second blog post</div>
+    <div class="yunha-inc-card__secondary mdc-typography--body2">My second blog post using 11ty and Material Design Component. </div>
+    <div class="mdc-card__actions">
+      <div class="mdc-card__action-buttons">
+        <button class="mdc-button mdc-card__action mdc-card__action--button adopt-form__button">
+          <i class="material-icons mdc-button__icon">favorite_border</i> <span>Show</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</a></div>
+  </div>
+</div>
+
+  </main>
+
+  <script src="/bundle.js" async></script>
+</body>
+
+</html>
