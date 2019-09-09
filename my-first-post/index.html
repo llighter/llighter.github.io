@@ -186,6 +186,7 @@ Feel free to seeing around.</p>
   ></iframe>
 </div>
 <pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// this is the comment</span></span><br><span class="highlight-line"><span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceObserver</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> entry <span class="token keyword">of</span> list<span class="token punctuation">.</span><span class="token function">getEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token punctuation">:</span> <span class="token string">'layout-shift'</span><span class="token punctuation">,</span> buffered<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="aside">Aside 유형 <a class="w-headline-link" href="#aside" aria-hidden="true">#</a></h2>
 <div class="w-aside w-aside--codelab">
 <p><strong>Try it!</strong>
 Technically, this test will also pass if your site contains any
@@ -193,6 +194,35 @@ Technically, this test will also pass if your site contains any
 elements. But although the test is vague in its requirements, it's still
 nice to pass it if you can!</p>
 </div>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+사용시 주의사항을 작성하는데 사용한다.</p>
+</div>
+<div class="w-aside w-aside--key-term">
+<p><strong>Key Term:</strong>
+용어를 설명할 때 사용한다.</p>
+</div>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+주의사항을 작성할 때 사용한다.</p>
+</div>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+경고사항을 작성할 때 사용한다.</p>
+</div>
+<div class="w-aside w-aside--success">
+<p><strong>Success:</strong>
+성공했을 때 사용한다.</p>
+</div>
+<div class="w-aside w-aside--objective">
+<p><strong>Objective:</strong>
+목적을 기술할 떄 사용한다.</p>
+</div>
+<div class="w-aside w-aside--gotchas">
+<strong>Gotchas!</strong> <p>강조 하고 싶을 때 사용한다.</p>
+</div>
+<h2 id="images">Images <a class="w-headline-link" href="#images" aria-hidden="true">#</a></h2>
+<p><img src="incompatible-with-catalina.png" alt="image"></p>
 <p>Thank you.</p>
 
 
@@ -203,7 +233,7 @@ nice to pass it if you can!</p>
         
       </span>
       <a
-        href="https://github.com/llighter/yunha-ind.git/blob/master/src/site/content/blog/my-first-post/index.md"
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/my-first-post/index.md"
       >
         이 포스트를 개선해주세요!
       </a>
