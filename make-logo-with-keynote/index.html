@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>키노트로 로고 만들기(SVG)</title>
+  <meta name="description" content="키노트로 디자인한 로고를 SVG 형태로 변환하여 홈페이지에 등로하는 방법에 대해 알아보자.
+" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="full_width" value="true" />
+  <link rel="stylesheet" href="/bundle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+  />
+  <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+</head>
+<body>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">YUNHA Engineering</h3>
+      <h6 class="mdc-drawer__subtitle">hadbsgk@gmail.com</h6>
+    </div>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list"><a class="mdc-list-item " href="/resume/" aria-current="page">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
+            <span class="mdc-list-item__text">Resume</span>
+          </a><a class="mdc-list-item " href="/blog/" aria-current="page">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">create</i>
+            <span class="mdc-list-item__text">Blog</span>
+          </a><a class="mdc-list-item " href="/about/" aria-current="page">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">fingerprint</i>
+            <span class="mdc-list-item__text">About</span>
+          </a></nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+        <span class="mdc-top-app-bar__title">
+          <a href="/"><img src="/images/logo.svg" style="height: 30px;" alt="YUNHA Industry" height="42"></a>
+        </span>
+      </section>
+
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <div class="mdc-tab-bar" role="tablist">
+          <div class="mdc-tab-scroller mdc-tab-scroller--align-end">
+            <div class="mdc-tab-scroller__scroll-area">
+              <div class="mdc-tab-scroller__scroll-content"><a href="/resume/">
+                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
+                    tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label">Resume</span>
+                    </span>
+                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </a><a href="/blog/">
+                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
+                    tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label">Blog</span>
+                    </span>
+                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </a><a href="/about/">
+                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
+                    tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label">About</span>
+                    </span>
+                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
+                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+  <div class="main-content" id="main-content">
+    
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--cover "
+  src="/make-logo-with-keynote/hero.jpg"
+  alt="keynote"
+/>
+  
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <main class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">키노트로 로고 만들기(SVG)</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          키노트로 디자인한 로고를 홈페이지에 등록하는 방법
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Sep 21, 2019</time>
+          
+        <div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/llighter.jpg"
+    alt="Yunha Park"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yunha Park</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/llighter90">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/llighter">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        <div>
+      
+    </header>
+    <p>윈도우나 맥을 가지고 있지만 전문적인 디자인 툴을 이용해서 로고나 포스터를 만드는 일은 쉬운일이 아니다. 그런데 만들고 싶은 로고가 복잡하기 않다면 굳이 <a href="https://www.adobe.com/kr/products/photoshop.html">포토샵</a>이나 <a href="https://www.adobe.com/kr/products/illustrator.html">일러스트레이터</a> 같은 전문 툴을 사용해야할 필요가 있을까? 개인 홈페이지나 블로그 또는 작은 프로젝트를 진행하면서 간단하게 자신만의 로고를 만들어 사용해보자.</p>
+<h2 id="contents">Contents <a class="w-headline-link" href="#contents" aria-hidden="true">#</a></h2>
+<ol>
+<li>왜 키노트를 사용하는가?</li>
+<li>키노트로 로고 다자인하기</li>
+<li>배경없는 사진: PNG로 내보내기</li>
+<li>웹페이지에서 활용할 수 있도록 SVG로 변환하기</li>
+<li>홈페이지에 게시하기</li>
+</ol>
+<h2 id="">왜 키노트를 사용하는가? <a class="w-headline-link" href="#" aria-hidden="true">#</a></h2>
+<p>맥과 같이 비싼 장비를 보유하는 것의 장점중 하나는 수준 높은 도구들을 무료로 사용할 수 있다는 것이다. 그 중하나인 <strong>키노트</strong>는 발표자료를 작성하는데에도 주로 쓰이지만 문자와 디자인이 들어간 그림을 추출하는데에도 유용하게 사용할 수 있다.</p>
+<p>키노트에는 각종 다양한 폰트, 도형, 미디어를 지원하여 간단한 로고를 만드는데 부족함이 없다. 거기에 <strong>아이패드</strong> 를 보유하고 있다면 마우스로 표현하지 못하는 그림도 <strong>애플펜슬</strong>로 표현할 수 있다.</p>
+<h2 id="-2">키노트로 로고 디자인 하기 <a class="w-headline-link" href="#-2" aria-hidden="true">#</a></h2>
+<p>우선 나는 전문 디자인 역량이 없기 때문에 아이언맨의 토니 스타크가 운영하는 회사인 <strong>스타크 인더스트리</strong>를 오마주하여 로고를 디자인하였다.</p>
+<p><img src="stark-ind.jpeg" alt="image"></p>
+<p>이 로고는 미국 군수업체인 록히드마틴 사의 로고를 패러디 한 것으로 단순한 글자와 선으로 이루어져 있다. 우선 디자인 시안? 이 나왔으므로 키노트를 열어보자.</p>
+<h3 id="-3">폰트 <a class="w-headline-link" href="#-3" aria-hidden="true">#</a></h3>
+<p>폰트는 <code>Helvetica Neue</code>를 사용하였고 기본 자간(문자간격)이 넓기 때문에 <strong>문자간격(Charater Spacing)</strong> 을 <code>-9%</code>로 줄였다. 그리고 <strong>볼드체</strong>와 <strong>이텔릭체</strong>를 적용하여 비슷한 이미지를 구현하려고 했다.</p>
+<p><img src="letter.png" alt="image"></p>
+<div class="w-aside w-aside--note">
+<p><a href="https://support.apple.com/kb/PH24354?locale=ko_KR&amp;viewlocale=ko_KR">문자간격 줄이기</a>를 사용하려면 수정하려는 텍스트를 선택하고 위와 같이 텍스트 탭을 선택 후 아래 톱니바퀴 모양을 클릭하면 문자간격을 조절할 수 있다.</p>
+</div>
+<h3 id="-4">도형 <a class="w-headline-link" href="#-4" aria-hidden="true">#</a></h3>
+<p>도형은 선 2개로 이루어져 있고 기본 선을 두께(<code>8pt</code>)와 색상(<code>white</code>)을 변경하여 표현하였다.</p>
+<p><img src="shape.png" alt="image"></p>
+<h3 id=":-png">배경없이 사진으로 저장하기: <code>PNG</code>로 내보내기 <a class="w-headline-link" href="#:-png" aria-hidden="true">#</a></h3>
+<p><img src="images.png" alt="image">
+<img src="export-transparency.png" alt="image"></p>
+<p>로고로 사용하기 위해서는 로고 외 나머지 부분이 투명해야 한다. 키노트에서는 배경 옵션에서 채우지 않음을 선택하여 배경 색을 투명하게 하고 <code>파일</code> - <code>다음으로 내보내기</code> - <code>이미지…</code> - <code>포맷(PNG)</code> - <code>투명 배경을 포함하여 내보내기</code>를 선택한다.</p>
+<h2 id="svg">웹페이지에서 활용하기 위해 로고를 <code>SVG</code> 형식으로 변환하기 <a class="w-headline-link" href="#svg" aria-hidden="true">#</a></h2>
+<p>우선, 내가 만드려는 로고는 홈페이지 상단에 넣은 로고이기 때문에 그에 맞도록 사진 높이를 조정해준다.</p>
+<p><img src="resize.png" alt="image"></p>
+<p>그런 다음 검색창에 <code>png to svg</code>라고 검색하고 맘에드는 사이트에 들어간다. 이 사이트는 일반 사진파일을 무료로 <code>SVG</code> 형식으로 변환해주는 사이트이다.</p>
+<p><img src="svgtopng.png" alt="image"></p>
+<div class="w-aside w-aside--key-term">
+<p><strong>Key Term:</strong>
+<a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%9F%AC%EB%B8%94_%EB%B2%A1%ED%84%B0_%EA%B7%B8%EB%9E%98%ED%94%BD%EC%8A%A4">SVG</a>는 2차원 <strong>백터 그래픽</strong>을 표현하기 위한 파일 형식으로 다른 사진파일들과는 달리 확대하거나 줄여도 그림이 깨지지 않는다.</p>
+</div>
+<h2 id="-5">홈페이지에 게시하기 <a class="w-headline-link" href="#-5" aria-hidden="true">#</a></h2>
+<p>이제 만들어진 결과물을 내 홈페이지에 등록해보려고 한다. 기존의 로고는 너무 볼품이 없었다. 이 위치에 파일을 변경해보자.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mdc-top-app-bar__section mdc-top-app-bar__section--align-start<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons mdc-top-app-bar__navigation-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mdc-top-app-bar__title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/images/logo.svg<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>YUNHA Industry<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>42<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></span></code></pre>
+<p><img src="result.jpeg" alt="image"></p>
+<p>이상으로 키노트를 활용하여 로고를 만드는 방법에 대해 알아보았다. 디자인이 텍스트 위주이고 표현이 단순하다면 굳이 전문적인 툴을 사용하지 않고도 느낌있는 로고를 만들수 있을 것이다. 다만, 내용과는 별개로 자신만의 브랜드를 구축하고자 한다면 독창적인 로고를 만들어보는 것도 좋을 것 같다.</p>
+
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        마지막 업데이트 날짜: <time>Sep 21, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/make-logo-with-keynote/index.md"
+      >
+        이 포스트를 개선해주세요!
+      </a>
+    </div>
+
+  </main>
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+<div>
+
+  </div>
+
+  <footer>
+    <p>© 2019 llighter</p>
+</footer>
+
+  <script src="/bundle.js" async></script>
+</body>
+
+</html>
