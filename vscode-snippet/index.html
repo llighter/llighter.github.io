@@ -192,7 +192,7 @@
     loading="lazy"
   ></iframe>
 </div>
-<h2 id="vs-code-snippet()">VS Code Snippet(코드조각) 만들기 <a class="w-headline-link" href="#vs-code-snippet()" aria-hidden="true">#</a></h2>
+<h2 id="vs-code-snippet%EC%BD%94%EB%93%9C%EC%A1%B0%EA%B0%81-%EB%A7%8C%EB%93%A4%EA%B8%B0">VS Code Snippet(코드조각) 만들기 <a class="w-headline-link" href="#vs-code-snippet%EC%BD%94%EB%93%9C%EC%A1%B0%EA%B0%81-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-hidden="true">#</a></h2>
 <p>코딩을 하다보면 파일을 생성시 기본적으로 들어가는 내용들이 있다.
 가령 주석이나 템플릿코드들은 형식이 정해져있지만 필요할 때마다 작성해야하는 불편함이 있다.
 이렇게 형식이 정해진 코드 조각들을 필요할 때마다 불러서 사용하는 방법이 <strong>사용자 코드 조각</strong>이다.
@@ -200,26 +200,26 @@
 <div class="w-aside w-aside--note">
 <p>영어가 불편하지 않다면 <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">Creating your own snippets</a> 글을 참조하면 보다 자세하고 정확한 정보를 확인할 수 있다.</p>
 </div>
-<h3 id="1.">1. 코드 조각 생성 <a class="w-headline-link" href="#1." aria-hidden="true">#</a></h3>
+<h3 id="1-%EC%BD%94%EB%93%9C-%EC%A1%B0%EA%B0%81-%EC%83%9D%EC%84%B1">1. 코드 조각 생성 <a class="w-headline-link" href="#1-%EC%BD%94%EB%93%9C-%EC%A1%B0%EA%B0%81-%EC%83%9D%EC%84%B1" aria-hidden="true">#</a></h3>
 <p>맥북 기준
 Code &gt; 기본설정 &gt; 사용자 코드 조각
 새로 생성</p>
-<h3 id="2.">2. 각 멤버 설명 <a class="w-headline-link" href="#2." aria-hidden="true">#</a></h3>
-<h4 id="2.1-scope">2.1 scope <a class="w-headline-link" href="#2.1-scope" aria-hidden="true">#</a></h4>
+<h3 id="2-%EA%B0%81-%EB%A9%A4%EB%B2%84-%EC%84%A4%EB%AA%85">2. 각 멤버 설명 <a class="w-headline-link" href="#2-%EA%B0%81-%EB%A9%A4%EB%B2%84-%EC%84%A4%EB%AA%85" aria-hidden="true">#</a></h3>
+<h4 id="21-scope">2.1 scope <a class="w-headline-link" href="#21-scope" aria-hidden="true">#</a></h4>
 <p>이 코드 조각을 호출 할 수 있는 확장자를 가지는 언어들을 넣어줍니다.</p>
 <div class="w-aside w-aside--note">
 <p>ex. javascript, typescript, html</p>
 </div>
-<h4 id="2.2-prefix">2.2 prefix <a class="w-headline-link" href="#2.2-prefix" aria-hidden="true">#</a></h4>
+<h4 id="22-prefix">2.2 prefix <a class="w-headline-link" href="#22-prefix" aria-hidden="true">#</a></h4>
 <p>코드 조각을 <strong>호출</strong> 할 때 사용되며 인텔리센싱 키를 활용하거나 타자 입력시 자동으로 추천하게 됩니다. 해당 <strong>prefix</strong>를 선택하면 코드 조각 **본문(body)**이 삽입됩니다.</p>
-<h4 id="2.3-body">2.3 body <a class="w-headline-link" href="#2.3-body" aria-hidden="true">#</a></h4>
+<h4 id="23-body">2.3 body <a class="w-headline-link" href="#23-body" aria-hidden="true">#</a></h4>
 <p>자신이 만들고 싶은 코드 조각을 입력합니다. 여기에는 <code>$1</code>, <code>$2</code>, ... <code>$0</code> 과 같이 변수를 둬서 코드 조각을 생성할 때마다 동적으로 변수의 내용을 입력할 수 있습니다. 각 변수의 내용을 입력한 후에는 <code>Tab</code>을 통해 다음 변수로 이동합니다.</p>
 <div class="w-aside w-aside--note">
 <p>변수는 <code>$1</code>부터 시작하고 <strong>마지막 탭 위치</strong>를 지정하고 싶은 경우 <code>$0</code>을 사용합니다.</p>
 </div>
-<h4 id="2.4-description">2.4 description <a class="w-headline-link" href="#2.4-description" aria-hidden="true">#</a></h4>
+<h4 id="24-description">2.4 description <a class="w-headline-link" href="#24-description" aria-hidden="true">#</a></h4>
 <p>마지막으로 <strong>description</strong>은 이 코드 조각에 대한 설명으로 코드 조각을 사용하기 위해 인텔리센싱 하거나 타자 입력시 나타나는 prefix와 더불어 표시됩니다.</p>
-<h3 id="">코드 조각 사용 예제 <a class="w-headline-link" href="#" aria-hidden="true">#</a></h3>
+<h3 id="%EC%BD%94%EB%93%9C-%EC%A1%B0%EA%B0%81-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C">코드 조각 사용 예제 <a class="w-headline-link" href="#%EC%BD%94%EB%93%9C-%EC%A1%B0%EA%B0%81-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C" aria-hidden="true">#</a></h3>
 <pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">"Generate default HTML form"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"html"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">		<span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"generate-html-form"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">		<span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">			<span class="token string">"&lt;!DOCTYPE html>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;html>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;head>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;title>${1:title name}&lt;/title>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;/head>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;body>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">				<span class="token string">"&lt;h2>Let me introduce myself&lt;/h2>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">				<span class="token string">"&lt;h3>My name is ${2:name}.&lt;/h3>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">				<span class="token string">"&lt;h3>I live in ${3:location}.&lt;/h3>"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">				<span class="token string">"$0"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"&lt;/body>"</span></span><br><span class="highlight-line">		<span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">		<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Generate default html form"</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 
 
