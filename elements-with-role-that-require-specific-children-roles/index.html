@@ -1,116 +1,143 @@
 <!DOCTYPE html>
-<html lang="ko">
 
+
+<html lang="ko">
 <head>
-  <title>Elements with [role] that require specific children [role]s, are missing 해결하기</title>
-  <meta name="description" content="Learn how to improve your web page&#39;s accessibility for assistive technology users by making sure that all elements with ARIA roles have the required child elements.
-" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>Elements with [role] that require specific children [role]s, are missing 해결하기</title>
+<meta name="description" content="Learn how to improve your web page's accessibility for assistive technology users by making sure that all elements with ARIA roles have the required child elements. " />
+
+<meta itemprop="name" content="Elements with [role] that require specific children [role]s, are missing 해결하기" />
+<meta itemprop="description" content="Learn how to improve your web page's accessibility for assistive technology users by making sure that all elements with ARIA roles have the required child elements. " />
+<meta itemprop="image" content="https://llighter.github.io/elements-with-role-that-require-specific-children-roles/hero.jpg" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/elements-with-role-that-require-specific-children-roles/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/elements-with-role-that-require-specific-children-roles/hero.jpg" />
+<meta property="og:image:alt" content="ARIA for screen reader" />
+<meta property="tag" content="ARIA" />
+<meta property="tag" content="lighthouse" />
+<meta property="tag" content="accessibility" />
+<meta property="tag" content="screen-reader" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Elements with [role] that require specific children [role]s, are missing 해결하기" />
+<meta name="twitter:description" content="Learn how to improve your web page's accessibility for assistive technology users by making sure that all elements with ARIA roles have the required child elements. " />
+<meta name="twitter:image" content="https://llighter.github.io/elements-with-role-that-require-specific-children-roles/hero.jpg" />
+
   <meta name="full_width" value="true" />
-  <link rel="stylesheet" href="/bundle.css">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
   <link
     rel="stylesheet"
     href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
   />
+  <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
 </head>
-<body>
-  <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title">YUNHA Engineering</h3>
-      <h6 class="mdc-drawer__subtitle">hadbsgk@gmail.com</h6>
-    </div>
-    <div class="mdc-drawer__content">
-      <nav class="mdc-list"><a class="mdc-list-item " href="/resume/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
-            <span class="mdc-list-item__text">Resume</span>
-          </a><a class="mdc-list-item " href="/quicktips/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">speed</i>
-            <span class="mdc-list-item__text">Quick Tips</span>
-          </a><a class="mdc-list-item " href="/blog/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">create</i>
-            <span class="mdc-list-item__text">Blog</span>
-          </a><a class="mdc-list-item " href="/about/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">fingerprint</i>
-            <span class="mdc-list-item__text">About</span>
-          </a></nav>
-    </div>
-  </aside>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn" aria-lable="menu"></button>
 
-  <div class="mdc-drawer-scrim"></div>
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-        <span class="mdc-top-app-bar__title">
-          <a href="/"><img src="/images/logo.svg" style="height: 30px;" alt="YUNHA Industries" height="42"></a>
-        </span>
-      </section>
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
 
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <div class="mdc-tab-bar" role="tablist">
-          <div class="mdc-tab-scroller mdc-tab-scroller--align-end">
-            <div class="mdc-tab-scroller__scroll-area">
-              <div class="mdc-tab-scroller__scroll-content"><a href="/resume/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Resume</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/quicktips/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Quick Tips</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/blog/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Blog</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/about/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">About</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
     </div>
-  </header>
-  <div class="main-content" id="main-content">
-    
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
 <div class="guide-landing-page">
   
     <img
   class="w-hero w-hero--cover w-hero--center"
-  src="/elements-with-role-that-require-specific-children-rols/hero.jpg"
+  src="/elements-with-role-that-require-specific-children-roles/hero.jpg"
   alt="ARIA for screen reader"
 />
   
@@ -205,7 +232,7 @@
 <p>이제 실제 내 홈페이지 코드를 살펴보자. 나는 내 글들을 표현할 때 카드 형식을 쓰는데 여러 카드를 둘러싸는 태그에 <code>role=&quot;list&quot;</code>를 넣어주었다.
 하지만 하위 카드 요소에 <code>role</code>이 지정되어 있지 않아서 <code>role=&quot;listitem&quot;</code>을 추가해 주었다.</p>
 <pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-grid w-pb--std<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-grid__columns w-grid__columns--gapless w-grid__columns--three<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><mark class="highlight-line highlight-line-active">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${url}<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-card<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>listitem<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-post-card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-post-card__cover ${thumbnail &amp;&amp;<br>            `w-post-card__cover--with-image`}<span class="token punctuation">"</span></span><br>        <span class="token punctuation">></span></span><br><span class="highlight-line">            ${thumbnail &amp;&amp; renderThumbnail(url, thumbnail, alt)}</span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><br>            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${thumbnail<br><span class="highlight-line">                ? `w-post-card__headline--with-image`</span><br>                : `w-post-card__headline`}<span class="token punctuation">"</span></span><br>            <span class="token punctuation">></span></span><br><span class="highlight-line">            ${md(data.title)}</span><br><span class="highlight-line">            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-post-card__desc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>w-post-card__subhead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">            ${md(data.subhead)}</span><br><span class="highlight-line">            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    ...</span><br><span class="highlight-line"></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span></code></pre>
-<p>수정후에 다시 Lighthouse를 측정한 결과는 만족스로웠다.</p>
+<p>수정후에 다시 Lighthouse를 측정한 결과는 만족스웠다.</p>
 <p><img src="after-edit.png" alt="image"></p>
 <h2 id="%EC%A0%95%EB%A6%AC%ED%95%98%EB%A9%B0">정리하며.. <a class="w-headline-link" href="#%EC%A0%95%EB%A6%AC%ED%95%98%EB%A9%B0" aria-hidden="true">#</a></h2>
 <p>이상으로 웹 접근성 향상을 위해 <code>role</code>을 어떻게 사용하지 알아보았다. 사실 <strong>ARIA</strong>는 일반 사용들이 체감하기 어려운 부분일 수 있지만 맹인, 문맹 혹은 학습장애가 있는 사람들에게 유용한 보조 기술로 제공하는데 중요한 역할을 한다. 뿐만 아니라 웹이 모니터나 모바일 등 화면에 머무르는게 아니라 구글 어시스턴트나 시리와 같은 음성 기술과도 결합하여 사용되기 떄문에 이러한 접근성을 고려하여 웹 페이지를 설계하는 것은 중요하다. 지금은 <code>role</code>에 대한 것만 수정하였지만 차츰 <strong>ARIA</strong>에 대한 부분을 반영하여 웹 페이지의 접근성을 향상시켜 가야겠다.</p>
@@ -227,7 +254,7 @@
         
       </span>
       <a
-        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/elements-with-role-that-require-specific-children-rols/index.md"
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/elements-with-role-that-require-specific-children-roles/index.md"
       >
         이 포스트를 개선해주세요!
       </a>
@@ -251,13 +278,14 @@
   
 <div>
 
-  </div>
-
+    </div>
+  </main>
   <footer>
     <p>© 2019 llighter</p>
 </footer>
 
-  <script src="/bundle.js" async></script>
+  
+  <script type="module" src="/bootstrap.js"></script>
 </body>
 
 </html>

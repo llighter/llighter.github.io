@@ -1,111 +1,134 @@
 <!DOCTYPE html>
-<html lang="ko">
 
+
+<html lang="ko">
 <head>
-  <title>My First blog post</title>
-  <meta name="description" content="My first blog post using 11ty and Material Design Component.
-" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>My First blog post</title>
+<meta name="description" content="My first blog post using 11ty and Material Design Component. " />
+
+<meta itemprop="name" content="My First blog post" />
+<meta itemprop="description" content="My first blog post using 11ty and Material Design Component. " />
+<meta itemprop="image" content="https://llighter.github.io/my-first-post/hero.jpg" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/my-first-post/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/my-first-post/hero.jpg" />
+<meta property="og:image:alt" content="First Step for my website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="My First blog post" />
+<meta name="twitter:description" content="My first blog post using 11ty and Material Design Component. " />
+<meta name="twitter:image" content="https://llighter.github.io/my-first-post/hero.jpg" />
+
   <meta name="full_width" value="true" />
-  <link rel="stylesheet" href="/bundle.css">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
   <link
     rel="stylesheet"
     href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
   />
+  <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
 </head>
-<body>
-  <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title">YUNHA Engineering</h3>
-      <h6 class="mdc-drawer__subtitle">hadbsgk@gmail.com</h6>
-    </div>
-    <div class="mdc-drawer__content">
-      <nav class="mdc-list"><a class="mdc-list-item " href="/resume/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">description</i>
-            <span class="mdc-list-item__text">Resume</span>
-          </a><a class="mdc-list-item " href="/quicktips/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">speed</i>
-            <span class="mdc-list-item__text">Quick Tips</span>
-          </a><a class="mdc-list-item " href="/blog/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">create</i>
-            <span class="mdc-list-item__text">Blog</span>
-          </a><a class="mdc-list-item " href="/about/" aria-current="page">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">fingerprint</i>
-            <span class="mdc-list-item__text">About</span>
-          </a></nav>
-    </div>
-  </aside>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn" aria-lable="menu"></button>
 
-  <div class="mdc-drawer-scrim"></div>
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-        <span class="mdc-top-app-bar__title">
-          <a href="/"><img src="/images/logo.svg" style="height: 30px;" alt="YUNHA Industries" height="42"></a>
-        </span>
-      </section>
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
 
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <div class="mdc-tab-bar" role="tablist">
-          <div class="mdc-tab-scroller mdc-tab-scroller--align-end">
-            <div class="mdc-tab-scroller__scroll-area">
-              <div class="mdc-tab-scroller__scroll-content"><a href="/resume/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Resume</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/quicktips/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Quick Tips</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/blog/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Blog</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a><a href="/about/">
-                  <button class="mdc-tab mdc-tab--active yunha-inc-tab mdc-tab--min-width" role="tab" aria-selected="true"
-                    tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">About</span>
-                    </span>
-                    <span class="mdc-tab-indicator  yunha-inc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </a></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
     </div>
-  </header>
-  <div class="main-content" id="main-content">
-    
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
 <div class="guide-landing-page">
   
     <img
@@ -272,13 +295,14 @@ nice to pass it if you can!</p>
   
 <div>
 
-  </div>
-
+    </div>
+  </main>
   <footer>
     <p>© 2019 llighter</p>
 </footer>
 
-  <script src="/bundle.js" async></script>
+  
+  <script type="module" src="/bootstrap.js"></script>
 </body>
 
 </html>
