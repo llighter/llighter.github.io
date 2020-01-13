@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>VS code에서 키보드로 디렉토리 이동 및 파일 생성하기</title>
+<meta name="description" content=""Navigate directory and deal with file using keyboard in vs code" " />
+
+<meta itemprop="name" content="VS code에서 키보드로 디렉토리 이동 및 파일 생성하기" />
+<meta itemprop="description" content=""Navigate directory and deal with file using keyboard in vs code" " />
+<meta itemprop="image" content="https://llighter.github.io/move-and-touch-new-file-in-vscode/hero.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/move-and-touch-new-file-in-vscode/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/move-and-touch-new-file-in-vscode/hero.png" />
+<meta property="og:image:alt" content="sync" />
+<meta property="tag" content="tip" />
+<meta property="tag" content="vscode" />
+<meta property="tag" content="keyboard" />
+<meta property="tag" content="shortcut" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VS code에서 키보드로 디렉토리 이동 및 파일 생성하기" />
+<meta name="twitter:description" content=""Navigate directory and deal with file using keyboard in vs code" " />
+<meta name="twitter:image" content="https://llighter.github.io/move-and-touch-new-file-in-vscode/hero.png" />
+
+  <meta name="full_width" value="true" />
+  <meta name="theme-color" content="#FFF" />
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
+</head>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn" aria-label="menu"></button>
+
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
+
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
+    </div>
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--cover w-hero--center"
+  src="/move-and-touch-new-file-in-vscode/hero.png"
+  alt="sync"
+/>
+  
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link"
+      href=/quicktips
+    >
+      Tips
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <main class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">VS code에서 키보드로 디렉토리 이동 및 파일 생성하기</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          개발 및 문서작업 시 불필요한 마우스 이용을 피해 키보드로 모든 것을 해결하고자 하는 사람들을 위한 파일 관리 팁
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jan 13, 2020</time>
+          
+        <div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/llighter.jpg"
+    alt="Yunha Park"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yunha Park</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/llighter90">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/llighter">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        <div>
+      
+    </header>
+    <p>개발자 이거나 문서를 많이 작성하는 사람들에게는 효율성이 중요하다. 특히 단순한 작업을 할 떄는 동선을 최대한 줄이고 간단한 동작만으로 원하는 일을 처리해야 한다. 특히 <strong>VS code</strong> 와 같은 편집 툴에서는 파일을 생성하고 이름을 바꾸고 복사하고 붙여넣는 작업이 상시 이루어 지기 때문에 마우스나 터치패드를 이용하는 것은 효율적이지 못할 뿐만 아니라 매우 신경을 거슬리게 하는 작업이다. 따라서 이번 팁에서는 <strong>VS code</strong>에서 키보드 동작만으로 간단하게 파일을 제어하는 방법에 대해 알아보자.</p>
+<p>VS code에는 크게 세 영역으로 화면이 나누어져 있는데 파일 트리를 볼 수 있는 익스플로러와 편집창 그리고 하단에 터미널이 있다. 사용자의 선호에 따라 그리고 상황에 따라 이 영역구분은 변하기는 하지만 일반적인 구성은 이 세 부분으로 나뉜다.</p>
+<p>이 때 편집창에서 코드 혹은 문서를 작성하다가 새로운 파일을 만들거나 다른 파일을 찾는 경우에 기본적으로 팔렛트를 이용하거나 바로 파일 생성 단축키를 누르면 되지만 어떤 디렉토리의 목록을 보면서 파일을 선택하고 싶은 경우 익스플로러를 확인해야 한다.</p>
+<h3 id="explorer%E2%87%A7%E2%8C%98e-%EC%9D%B4%EB%8F%99">Explorer(⇧⌘E) 이동 <a class="w-headline-link" href="#explorer%E2%87%A7%E2%8C%98e-%EC%9D%B4%EB%8F%99">#</a></h3>
+<p>위 단축키를 활용하면 커서의 포커스가 익스플로러로 이동한다.
+여기서 디렉토리나 파일의 이름중 일부를 알고 있다면 바로 타이핑해서 검색할 수 있다.</p>
+<h3 id="%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0%E2%8C%98arrowdown">파일 열기(⌘[ArrowDown]) <a class="w-headline-link" href="#%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0%E2%8C%98arrowdown">#</a></h3>
+<p>커맨드와 방향키 아래를 누르면 파일을 열어서 편집창에서 확인할 수 있다.</p>
+<h3 id="%EC%9D%B4%EB%A6%84-%EB%B0%94%EA%BE%B8%EA%B8%B0enter">이름 바꾸기(Enter) <a class="w-headline-link" href="#%EC%9D%B4%EB%A6%84-%EB%B0%94%EA%BE%B8%EA%B8%B0enter">#</a></h3>
+<p>디렉토리나 파일 위에서 엔터를 누르면 파일명을 변경 할 수 있다.</p>
+<h3 id="%EB%82%B4%EA%B0%80-%EC%9D%B4%EB%8F%99%ED%95%9C-%EC%9C%84%EC%B2%B4%EC%97%90-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0">내가 이동한 위체에 파일 생성하기 <a class="w-headline-link" href="#%EB%82%B4%EA%B0%80-%EC%9D%B4%EB%8F%99%ED%95%9C-%EC%9C%84%EC%B2%B4%EC%97%90-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0">#</a></h3>
+<p>이 기능을 사용하려면 키 설정을 추가해줘야 한다. 기본 설정만으로는 디렉토리가 지정되지 않고 생성되어 원하는 곳에 다시 저장해줘야하는 불편함이 있다.</p>
+<p><img src="keyboard-json.png" alt="image"></p>
+<p>위 사진과 같이 팔렛트를 열어서 키보드 단축키를 <code>JSON</code>파일로 입력할 수 있는 곳에 들어간다. 그 다음 아래 코드를 복사 붙여넣기 한 다음 저장하면 익스플로러에 포커스된 상태에서 <code>⌘</code> <code>n</code>을 입력하면 해당 디렉토리에 바로 파일을 생성할 수 있게 된다.</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+n"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"explorer.newFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"explorerViewletFocus"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p><img src="make_file.png" alt="image"></p>
+<p>위 사진을 보면 익스플로러에서 바로 파일을 생성하는 것을 확인 할 수 있다.</p>
+<h3 id="%EA%B2%B0%EB%A1%A0">결론 <a class="w-headline-link" href="#%EA%B2%B0%EB%A1%A0">#</a></h3>
+<p><strong>VS code</strong>를 사용하면서 정말 좋은 편집기라는 생각이 들면서도 한편으로는 불편했던 점들이 있었다. 바로 오늘 내용 처럼 키보드로 바로 파일을 만들고 작성하는 것과 같은 문제들이다. 그럼에도 불구하고 <strong>VS code</strong>가 좋은 것은 사용자가 원하는 대로 설정하여 사용하는 것이 매우 자유롭다는 것이다. <strong>VS code</strong>의 활용도는 무궁무진하다. 앞으로 더 사용해가면서 소개하고 싶은 팁들이 있다면 더 소개하도록 하곘다.</p>
+<h3 id="%EC%B0%B8%EA%B3%A0">참고 <a class="w-headline-link" href="#%EC%B0%B8%EA%B3%A0">#</a></h3>
+<p><a href="https://code.visualstudio.com/docs/getstarted/keybindings">VS code 단축키 레퍼런스 문서</a></p>
+<p>썸네일에 사용된 아이콘은 <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>의 <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>님이 만드시 아이콘입니다.</p>
+
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        마지막 업데이트 날짜: <time>Jan 13, 2020</time>
+        
+      </span>
+      <a
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/quicktips/move-and-touch-new-file-in-vscode/index.md"
+      >
+        이 포스트를 개선해주세요!
+      </a>
+    </div>
+
+  </main>
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/quicktips"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+<div>
+
+    </div>
+  </main>
+  <footer>
+    <p>© 2019 llighter</p>
+</footer>
+
+  
+  <script type="module" src="/bootstrap.js"></script>
+</body>
+
+</html>

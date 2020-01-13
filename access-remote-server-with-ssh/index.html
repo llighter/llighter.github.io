@@ -216,20 +216,20 @@
     loading="lazy"
   ></iframe>
 </div>
-<h2 id="ssh%EB%8A%94-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%EC%9D%84-%ED%95%A0%EA%B9%8C">SSH는 언제 사용을 할까? <a class="w-headline-link" href="#ssh%EB%8A%94-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%EC%9D%84-%ED%95%A0%EA%B9%8C" aria-hidden="true">#</a></h2>
+<h2 id="ssh%EB%8A%94-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%EC%9D%84-%ED%95%A0%EA%B9%8C">SSH는 언제 사용을 할까? <a class="w-headline-link" href="#ssh%EB%8A%94-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%EC%9D%84-%ED%95%A0%EA%B9%8C">#</a></h2>
 <p><strong>AWS</strong>나 <strong>GCP</strong>와 같은 클라우드 서비스를 이용한다면 아마 대부분 서버 인스턴스를 사용하고 있을 것이다. 그리고 그 서버에 서비스가 구동중이거나 구동할 예정이라면 개발자는 꽤 자주 원격으로 서버에 접속해야할 것이다. 보통 클라우드 벤더들은 웹 환경에서 쉘을 접속할 수 있도록 하거나 구글 같은 경우 <a href="https://cloud.google.com/sdk/?hl=ko">Cloud SDK</a>를 설치하면 자신들이 만든 명령어로 접속할수 있다. 하지만 일반 서버에 접속하거나 AWS를 이용한다면 대부분 <strong>SSH</strong>를 이용해야 한다.</p>
 <div class="w-aside w-aside--key-term">
 <p><strong>Key Term:</strong>
 <a href="https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8">SSH</a>는 멀리 떨어진 다른 컴퓨터에 접속하여 명령을 실행할수 있도록 해주는 응용 프로그램 또는 그 프로토콜을 말한다.</p>
 </div>
 <p>대부분의 사용자가 윈도우 환경 혹은 맥 환경에서 컴퓨터를 사용하기 때문에 이 두 OS에서 대표적인 클라우드 서비스인 AWS의 <a href="https://aws.amazon.com/ko/ec2/">EC2서버</a>에 원격접속하는 방법에 대해 알아보자.</p>
-<h2 id="contents">Contents <a class="w-headline-link" href="#contents" aria-hidden="true">#</a></h2>
+<h2 id="contents">Contents <a class="w-headline-link" href="#contents">#</a></h2>
 <ol>
 <li>SSH 접속하기</li>
 <li>macOS에서 SSH config 설정하기</li>
 <li>Windows 10에서  SSH config 설정하기</li>
 </ol>
-<h2 id="ssh-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0">SSH 접속하기 <a class="w-headline-link" href="#ssh-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0" aria-hidden="true">#</a></h2>
+<h2 id="ssh-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0">SSH 접속하기 <a class="w-headline-link" href="#ssh-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0">#</a></h2>
 <ol>
 <li>SSH 클라이언트를 연다.(윈도우의 경우는 <a href="https://ko.wikipedia.org/wiki/Cmd.exe">Cmd</a> 혹은 <a href="https://gitforwindows.org">Git bash</a>, 맥의 경우는 <a href="https://support.apple.com/ko-kr/guide/terminal/welcome/mac">터미널</a>)</li>
 <li>프라이빗 키 파일(<code>server.aws.pem</code>)을 찾는다.</li>
@@ -242,15 +242,15 @@
 <p><strong>Caution:</strong>
 원격 서버에 접속하기 위해서는 서버에서 접속하는 클라이언트에 대해 접근이 <strong>허가</strong>되어야 한다. 예를 들어 아마존의 EC2 인스턴스의 경우 <a href="https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-network-security.html">보안 그룹</a>을 구성하여 인스턴스에 대한 트래픽을 제어할 수 있다. 따라서 외부에서 접속하기 위해 특정 IP 대역에 대해 SSH 접근을 허용해줘야 한다.</p>
 </div>
-<h2 id="macos">macOS <a class="w-headline-link" href="#macos" aria-hidden="true">#</a></h2>
+<h2 id="macos">macOS <a class="w-headline-link" href="#macos">#</a></h2>
 <p>맥의 경우 잘 알려져 있다시피 운영체제가 유닉스 기반으로 만들어졌다. 그러다보니 개발에 필요한 여러 툴들이 기본적으로 설치되어 있기도 하고 설치가 매우 간편하다. SSH는 기본적으로 설치되어 있으므로 바로 SSH 설정파일을 작성하도록 하자.</p>
-<h3 id="ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0">SSH 설정파일 만들기 <a class="w-headline-link" href="#ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-hidden="true">#</a></h3>
+<h3 id="ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0">SSH 설정파일 만들기 <a class="w-headline-link" href="#ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0">#</a></h3>
 <p>맥 환경에서는 기본적으로 SSH가 설치 되어 있기 때문에 아래와 같이 설정을 진행하면 된다.</p>
-<h4 id="%ED%99%88-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C-%EC%9D%B4%EB%8F%99">홈 디렉토리로 이동 <a class="w-headline-link" href="#%ED%99%88-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C-%EC%9D%B4%EB%8F%99" aria-hidden="true">#</a></h4>
+<h4 id="%ED%99%88-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C-%EC%9D%B4%EB%8F%99">홈 디렉토리로 이동 <a class="w-headline-link" href="#%ED%99%88-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A1%9C-%EC%9D%B4%EB%8F%99">#</a></h4>
 <p><code>cd ~</code></p>
-<h4 id="ssh-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EC%97%90-config-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1">.ssh 디렉토리에 <code>config</code> 파일 생성 <a class="w-headline-link" href="#ssh-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EC%97%90-config-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1" aria-hidden="true">#</a></h4>
+<h4 id="ssh-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EC%97%90-config-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1">.ssh 디렉토리에 <code>config</code> 파일 생성 <a class="w-headline-link" href="#ssh-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EC%97%90-config-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1">#</a></h4>
 <p><code>vim ~/.ssh/config</code></p>
-<h4 id="%EC%A0%91%EC%86%8D%ED%95%A0-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5">접속할 호스트 정보 입력 <a class="w-headline-link" href="#%EC%A0%91%EC%86%8D%ED%95%A0-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5" aria-hidden="true">#</a></h4>
+<h4 id="%EC%A0%91%EC%86%8D%ED%95%A0-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5">접속할 호스트 정보 입력 <a class="w-headline-link" href="#%EC%A0%91%EC%86%8D%ED%95%A0-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5">#</a></h4>
 <p>AWS EC2를 접속할 때는 <strong>비밀번호</strong>를 이용하는 것과 <strong>키 파일</strong>을 이용하는 2가지 방법이 있다.</p>
 <ol>
 <li>비밀번호를 이용한 접속 방법</li>
@@ -263,10 +263,10 @@
 <pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host 호스트명</span><br><span class="highlight-line">    HostName 호스트IP</span><br><span class="highlight-line">    User 호스트사용자명</span><br><span class="highlight-line">    IdentityFile pem키위치</span></code></pre>
 <p><img src="ssh-config.png" alt="image"></p>
 <p>위의 캡쳐와 같이 설정하면 이제부터는 <code>config</code>에 설정해둔 호스트 명칭(<code>ssh server-aws.pem</code>)을 입력하는 것만으로도 쉽게 서버에 접속할 수 있다.</p>
-<h2 id="windows-10">Windows 10 <a class="w-headline-link" href="#windows-10" aria-hidden="true">#</a></h2>
+<h2 id="windows-10">Windows 10 <a class="w-headline-link" href="#windows-10">#</a></h2>
 <p>윈도우 7 이전의 경우 운영체제에서 기본적으로 SSH 접속을 지원하지 않기 때문에 <a href="https://www.putty.org/">putty</a>와 같은 툴을 사용하여 접속하는 경우가 많았다. 하지만 <a href="https://support.microsoft.com/ko-kr/help/4057281/windows-7-support-will-end-on-january-14-2020">윈도우 7 지원</a>이 2020년 1월 14일자로 종료되기 때문에 윈도우 10 기준으로 진행하도록 하겠다.</p>
 <p>윈도우 10도 맥과 마찬가지로 SSH가 기본적으로 설치 되어 있기 때문에 SSH 설정파일을 바로 작성해주면 된다. 위에서 언급한 것처럼 기본적으로 제공되는 <a href="https://ko.wikipedia.org/wiki/Cmd.exe">Cmd</a>나 <a href="https://docs.microsoft.com/ko-kr/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6">PowerShell</a>을 사용해도 되고 <a href="https://gitforwindows.org">Git bash</a>를 설치하여 활용해도 된다. 개발을 위해서는 서버와 비슷한 환경을 사용할 수 있는 Git bash를 사용하는 것을 추천한다. 명령어 뿐만 아니라 테마 설정 등 개발자 편의를 누릴 수 있는 기능들을 제공하기 때문이다.</p>
-<h3 id="ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2">SSH 설정파일 만들기 <a class="w-headline-link" href="#ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2" aria-hidden="true">#</a></h3>
+<h3 id="ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2">SSH 설정파일 만들기 <a class="w-headline-link" href="#ssh-%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2">#</a></h3>
 <div class="w-aside w-aside--caution">
 <p><strong>Caution:</strong>
 접속 시도 중 <code>no matching key</code> 에러가 발생한다면 이는 openSSH에서 몇몇 옵션이 enable 되어있지 않기 때문입니다. <a href="https://jojoldu.tistory.com/427">윈도우에서 ssh 터미널 사용하기</a>에 따르면 아래와 같이 설정을 추가해주면 된다고 한다.</p>
@@ -274,7 +274,7 @@
 <pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host <span class="token operator">*</span></span><br><span class="highlight-line">KexAlgorithms <span class="token operator">+</span>diffie<span class="token operator">-</span>hellman<span class="token operator">-</span>group1<span class="token operator">-</span>sha1</span><br><span class="highlight-line">HostKeyAlgorithms <span class="token operator">+</span>ssh<span class="token operator">-</span>dss</span><br><span class="highlight-line">Ciphers <span class="token operator">+</span>3des<span class="token operator">-</span>cbc</span><br><span class="highlight-line">Macs <span class="token operator">+</span>hmac<span class="token operator">-</span>md5</span><br><span class="highlight-line">UserKnownHostsFile ~<span class="token operator">/</span><span class="token operator">.</span>ssh<span class="token operator">/</span>known_hosts</span></code></pre>
 <p>아래는 최종 config 설정 파일이다.</p>
 <p><img src="ssh-config-win10.png" alt="image"></p>
-<h2 id="%EA%B2%B0%EB%A1%A0">결론 <a class="w-headline-link" href="#%EA%B2%B0%EB%A1%A0" aria-hidden="true">#</a></h2>
+<h2 id="%EA%B2%B0%EB%A1%A0">결론 <a class="w-headline-link" href="#%EA%B2%B0%EB%A1%A0">#</a></h2>
 <p>이상으로 맥와 윈도우에서 SSH 접속을 통해 원격 서버에 접속하는 방법에 대해 알아보았다. 요즘에는 개인 프로젝트도 대부분 클라우스 서비스를 활용하여 서버를 올리고 배포하는 경우가 많기 때문에 간단한 설정으로 개발의 편리성을 올릴 수 있는 방법이 유용할 것이라 생각한다. 내용에 대해 수정이 필요하거나 추가하고 싶은 내용이 있다면 아래 링크를 통해 깃헙 이슈를 남겨주면 반영하도록 하겠다.</p>
 
 
