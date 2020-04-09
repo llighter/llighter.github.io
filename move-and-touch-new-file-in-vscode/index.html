@@ -47,7 +47,7 @@
 <body class="unresolved">
   <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
   <web-header role="navigation">
-    <button class="web-header__hamburger-btn" aria-label="menu"></button>
+    <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
 
     <a
       href="/"
@@ -221,8 +221,8 @@
 <p>이 기능을 사용하려면 키 설정을 추가해줘야 한다. 기본 설정만으로는 디렉토리가 지정되지 않고 생성되어 원하는 곳에 다시 저장해줘야하는 불편함이 있다.</p>
 <p><img src="keyboard-json.png" alt="image"></p>
 <p>위 사진과 같이 팔렛트를 열어서 키보드 단축키를 <code>JSON</code>파일로 입력할 수 있는 곳에 들어간다. 그 다음 아래 코드를 복사 붙여넣기 한 다음 저장하면 익스플로러에 포커스된 상태에서 <code>⌘</code> <code>n</code>을 입력하면 해당 디렉토리에 바로 파일을 생성할 수 있게 된다.</p>
-<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+n"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"explorer.newFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"explorerViewletFocus"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<p><img src="make_file.png" alt="image"></p>
+<web-copy-code><pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"cmd+n"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"explorer.newFile"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"explorerViewletFocus"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+</web-copy-code><p><img src="make_file.png" alt="image"></p>
 <p>위 사진을 보면 익스플로러에서 바로 파일을 생성하는 것을 확인 할 수 있다.</p>
 <h3 id="%EA%B2%B0%EB%A1%A0">결론 <a class="w-headline-link" href="#%EA%B2%B0%EB%A1%A0">#</a></h3>
 <p><strong>VS code</strong>를 사용하면서 정말 좋은 편집기라는 생각이 들면서도 한편으로는 불편했던 점들이 있었다. 바로 오늘 내용 처럼 키보드로 바로 파일을 만들고 작성하는 것과 같은 문제들이다. 그럼에도 불구하고 <strong>VS code</strong>가 좋은 것은 사용자가 원하는 대로 설정하여 사용하는 것이 매우 자유롭다는 것이다. <strong>VS code</strong>의 활용도는 무궁무진하다. 앞으로 더 사용해가면서 소개하고 싶은 팁들이 있다면 더 소개하도록 하곘다.</p>

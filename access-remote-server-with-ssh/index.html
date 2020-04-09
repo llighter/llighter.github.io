@@ -46,7 +46,7 @@
 <body class="unresolved">
   <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
   <web-header role="navigation">
-    <button class="web-header__hamburger-btn" aria-label="menu"></button>
+    <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
 
     <a
       href="/"
@@ -255,13 +255,13 @@
 <ol>
 <li>비밀번호를 이용한 접속 방법</li>
 </ol>
-<pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host 호스트명</span><br><span class="highlight-line">    HostName 호스트IP</span><br><span class="highlight-line">    User 호스트사용자명</span></code></pre>
-<ol start="2">
+<web-copy-code><pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host 호스트명</span><br><span class="highlight-line">    HostName 호스트IP</span><br><span class="highlight-line">    User 호스트사용자명</span></code></pre>
+</web-copy-code><ol start="2">
 <li>키 파일(pem)을 이용한 접속 방법</li>
 </ol>
 <p><code>IdentityFile</code> 항목을 추가해서 키 파일(pem) 위치를 입력해준다.</p>
-<pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host 호스트명</span><br><span class="highlight-line">    HostName 호스트IP</span><br><span class="highlight-line">    User 호스트사용자명</span><br><span class="highlight-line">    IdentityFile pem키위치</span></code></pre>
-<p><img src="ssh-config.png" alt="image"></p>
+<web-copy-code><pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host 호스트명</span><br><span class="highlight-line">    HostName 호스트IP</span><br><span class="highlight-line">    User 호스트사용자명</span><br><span class="highlight-line">    IdentityFile pem키위치</span></code></pre>
+</web-copy-code><p><img src="ssh-config.png" alt="image"></p>
 <p>위의 캡쳐와 같이 설정하면 이제부터는 <code>config</code>에 설정해둔 호스트 명칭(<code>ssh server-aws.pem</code>)을 입력하는 것만으로도 쉽게 서버에 접속할 수 있다.</p>
 <h2 id="windows-10">Windows 10 <a class="w-headline-link" href="#windows-10">#</a></h2>
 <p>윈도우 7 이전의 경우 운영체제에서 기본적으로 SSH 접속을 지원하지 않기 때문에 <a href="https://www.putty.org/">putty</a>와 같은 툴을 사용하여 접속하는 경우가 많았다. 하지만 <a href="https://support.microsoft.com/ko-kr/help/4057281/windows-7-support-will-end-on-january-14-2020">윈도우 7 지원</a>이 2020년 1월 14일자로 종료되기 때문에 윈도우 10 기준으로 진행하도록 하겠다.</p>
@@ -271,8 +271,8 @@
 <p><strong>Caution:</strong>
 접속 시도 중 <code>no matching key</code> 에러가 발생한다면 이는 openSSH에서 몇몇 옵션이 enable 되어있지 않기 때문입니다. <a href="https://jojoldu.tistory.com/427">윈도우에서 ssh 터미널 사용하기</a>에 따르면 아래와 같이 설정을 추가해주면 된다고 한다.</p>
 </div>
-<pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host <span class="token operator">*</span></span><br><span class="highlight-line">KexAlgorithms <span class="token operator">+</span>diffie<span class="token operator">-</span>hellman<span class="token operator">-</span>group1<span class="token operator">-</span>sha1</span><br><span class="highlight-line">HostKeyAlgorithms <span class="token operator">+</span>ssh<span class="token operator">-</span>dss</span><br><span class="highlight-line">Ciphers <span class="token operator">+</span>3des<span class="token operator">-</span>cbc</span><br><span class="highlight-line">Macs <span class="token operator">+</span>hmac<span class="token operator">-</span>md5</span><br><span class="highlight-line">UserKnownHostsFile ~<span class="token operator">/</span><span class="token operator">.</span>ssh<span class="token operator">/</span>known_hosts</span></code></pre>
-<p>아래는 최종 config 설정 파일이다.</p>
+<web-copy-code><pre class="language-vim"><code class="language-vim"><span class="highlight-line">Host <span class="token operator">*</span></span><br><span class="highlight-line">KexAlgorithms <span class="token operator">+</span>diffie<span class="token operator">-</span>hellman<span class="token operator">-</span>group1<span class="token operator">-</span>sha1</span><br><span class="highlight-line">HostKeyAlgorithms <span class="token operator">+</span>ssh<span class="token operator">-</span>dss</span><br><span class="highlight-line">Ciphers <span class="token operator">+</span>3des<span class="token operator">-</span>cbc</span><br><span class="highlight-line">Macs <span class="token operator">+</span>hmac<span class="token operator">-</span>md5</span><br><span class="highlight-line">UserKnownHostsFile ~<span class="token operator">/</span><span class="token operator">.</span>ssh<span class="token operator">/</span>known_hosts</span></code></pre>
+</web-copy-code><p>아래는 최종 config 설정 파일이다.</p>
 <p><img src="ssh-config-win10.png" alt="image"></p>
 <h2 id="%EA%B2%B0%EB%A1%A0">결론 <a class="w-headline-link" href="#%EA%B2%B0%EB%A1%A0">#</a></h2>
 <p>이상으로 맥와 윈도우에서 SSH 접속을 통해 원격 서버에 접속하는 방법에 대해 알아보았다. 요즘에는 개인 프로젝트도 대부분 클라우스 서비스를 활용하여 서버를 올리고 배포하는 경우가 많기 때문에 간단한 설정으로 개발의 편리성을 올릴 수 있는 방법이 유용할 것이라 생각한다. 내용에 대해 수정이 필요하거나 추가하고 싶은 내용이 있다면 아래 링크를 통해 깃헙 이슈를 남겨주면 반영하도록 하겠다.</p>
