@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>클래스 컴포넌트에서 Bind 이벤트 핸들러가가 필요한 이유</title>
+<meta name="description" content="why we need to bind event handlers in Class Components(Custom element) " />
+
+<meta itemprop="name" content="클래스 컴포넌트에서 Bind 이벤트 핸들러가가 필요한 이유" />
+<meta itemprop="description" content="why we need to bind event handlers in Class Components(Custom element) " />
+<meta itemprop="image" content="https://llighter.github.io/bind-method/hero.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/bind-method/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/bind-method/hero.png" />
+<meta property="og:image:alt" content="Bind method" />
+<meta property="tag" content="javascript" />
+<meta property="tag" content="Custom element" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="클래스 컴포넌트에서 Bind 이벤트 핸들러가가 필요한 이유" />
+<meta name="twitter:description" content="why we need to bind event handlers in Class Components(Custom element) " />
+<meta name="twitter:image" content="https://llighter.github.io/bind-method/hero.png" />
+
+  <meta name="full_width" value="true" />
+  <meta name="theme-color" content="#FFF" />
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
+</head>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
+
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
+
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
+    </div>
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--cover "
+  src="/bind-method/hero.png"
+  alt="Bind method"
+/>
+  
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <main class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">클래스 컴포넌트에서 Bind 이벤트 핸들러가가 필요한 이유</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          커스텀 엘리먼트(custom element)의 생성자(constructor)에서 컴포넌트 인스턴스에 이벤트 핸들러를 연결해주기 
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 12, 2020</time>
+          
+            <span class="w-author__seperator">•</span>
+              Updated <time>Jun 12, 2020</time>
+          
+        <div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/llighter.jpg"
+    alt="Yunha Park"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yunha Park</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/llighter90">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/llighter">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        <div>
+      
+    </header>
+    <h2 id="bind-%EB%A9%94%EC%86%8C%EB%93%9C%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%93%B0%EC%9D%B4%EB%82%98">Bind 메소드는 어디에 쓰이나? <a class="w-headline-link" href="#bind-%EB%A9%94%EC%86%8C%EB%93%9C%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%93%B0%EC%9D%B4%EB%82%98">#</a></h2>
+<p>리엑트를 사용하거나 혹은 나처럼 <a href="https://developer.mozilla.org/ko/docs/Web/Web_Components/Using_custom_elements">커스텀 엘리먼트(custom element)</a>를 사용하여 기존의 엘리먼트들을 대신하여 기능을 캡슐화 한 <a href="https://developer.mozilla.org/ko/docs/Web/Web_Components/Using_custom_elements">커스텀 엘리먼트</a>를 생성하고자 할 때 아래와 같은 <code>bind()</code> 메소드를 볼 수 있다. 이와 같이 <a href="https://developer.mozilla.org/ko/docs/Web/Web_Components/Using_custom_elements">커스텀 엘리먼트</a>의 기능을 추가할 때는 생성자에서 <code>this</code> 객체에 바인딩을 해줘야 한다.</p>
+<web-copy-code><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">   <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">   <span class="token keyword">this</span><span class="token punctuation">.</span>onCopy <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onCopy</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+</web-copy-code><h2 id="bind-%EB%A9%94%EC%86%8C%EB%93%9C%EC%9D%98-%EC%A0%95%EC%B2%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80">Bind 메소드의 정체는 무엇인가? <a class="w-headline-link" href="#bind-%EB%A9%94%EC%86%8C%EB%93%9C%EC%9D%98-%EC%A0%95%EC%B2%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80">#</a></h2>
+<h3 id="%EB%8D%B0%EB%AA%A8-functionbind">데모: Function.bind() <a class="w-headline-link" href="#%EB%8D%B0%EB%AA%A8-functionbind">#</a></h3>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>bind()</code></a> 메소드가 호출되면 새로이 바인딩한 함수를 생성한다. 바인딩한 함수는 원본 함수 객체를 감싸는 함수로, ECMAScript 2015에서 말하는 특이 함수 객체(exotic function object)이다. 바인딩한 함수를 호출하면 일반적으로 래핑된 함수가 호출 된다. 자세한 설명은 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">여기</a>를 참조하도록 하자.</p>
+<web-copy-code><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">var</span> module <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line"> x<span class="token operator">:</span> <span class="token number">81</span><span class="token punctuation">,</span></span><br><span class="highlight-line"> <span class="token function-variable function">getX</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span> <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"> </span><br><span class="highlight-line">module<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 81</span></span><br><span class="highlight-line"> </span><br><span class="highlight-line"><span class="token keyword">var</span> retrieveX <span class="token operator">=</span> module<span class="token punctuation">.</span>getX<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">retrieveX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token comment">// 9 반환 - 함수가 전역 스코프에서 호출됐음</span></span><br><span class="highlight-line"> </span><br><span class="highlight-line"><span class="token comment">// module과 바인딩된 'this'가 있는 새로운 함수 생성</span></span><br><span class="highlight-line"><span class="token comment">// 신입 프로그래머는 전역 변수 x와</span></span><br><span class="highlight-line"><span class="token comment">// module의 속성 x를 혼동할 수 있음</span></span><br><span class="highlight-line"><span class="token keyword">var</span> boundGetX <span class="token operator">=</span> <span class="token function">retrieveX</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">boundGetX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 81</span></span></code></pre>
+</web-copy-code><h3 id="%EB%B0%94%EC%9D%B8%EB%94%A9%EB%90%9C-%ED%95%A8%EC%88%98-%EC%83%9D%EC%84%B1">바인딩된 함수 생성 <a class="w-headline-link" href="#%EB%B0%94%EC%9D%B8%EB%94%A9%EB%90%9C-%ED%95%A8%EC%88%98-%EC%83%9D%EC%84%B1">#</a></h3>
+<p><code>bind()</code>의 가장 간단한 사용법은 호출 방법과 관계없이 특정 this 값으로 호출되는 함수를 만드는 것이다. 초보 JavaScript 프로그래머로서 흔한 실수는 객체로부터 메소드를 추출한 뒤 그 함수를 호출할때, 원본 객체가 그 함수의 this로 사용될 것이라 기대하는 것이다.(예시 : 콜백 기반 코드에서 해당 메소드 사용). 그러나 특별한 조치가 없으면, 대부분의 경우 원본 객체는 손실됩니다. 원본 객체가 바인딩 되는 함수를 생성하면, 이러한 문제를 깔끔하게 해결할 수 있습니다.</p>
+<h2 id="%EC%A0%95%EB%A6%AC">정리 <a class="w-headline-link" href="#%EC%A0%95%EB%A6%AC">#</a></h2>
+<p>위의 예제에서 본 바와 같이 호출하는 함수에 객체를 바인딩 해주지 않으면 자바스크립트는 전역 객체로부터 값을 받아오려고 하기 때문에 내가 원하는 값이 아닌 다른 값을 가지게 된다. 그래서 우리는 생성자에서 컴포넌트 객체에 <code>this</code>의 이벤트 핸들러를 바인딩 해주는 것이다.</p>
+<p>간단하게 정리한 내용이어서 개념적으로 더 깊이 알고 싶다면 Saurabh Misra가 작성한 <a href="https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/">This is why we need to bind event handlers in Class Components in React</a> 글을 참고한다면 좋을 것이다.</p>
+
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        마지막 업데이트 날짜: <time>Jun 12, 2020</time>
+        
+      </span>
+      <a
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/bind-method/index.md"
+      >
+        이 포스트를 개선해주세요!
+      </a>
+    </div>
+
+  </main>
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+<div>
+
+    </div>
+  </main>
+  <footer>
+    <p>© 2019 llighter</p>
+</footer>
+
+  
+  <script type="module" src="/bootstrap.js"></script>
+</body>
+
+</html>
