@@ -206,7 +206,7 @@
       
     </header>
     <p>프로그래밍에서 가장 흔하게 다루는 요소 중 하나는 <strong>배열</strong>이다. 특히 배열 값에서 일부를 가져와 그 다음 작업의 기초 데이터로 사용하는 경우가 많다. 이번 포스트에서는 몇 가지 언어 환경에서 배열을 복사하는 API에 대해 알아본다. 우리는 자바, 자바스크립트 그리고 다트를 사용한 예제를 살펴보고 각 언어별 API의 공통점 및 차이점에 대해서도 알아볼 것이다.</p>
-<h2 id="tl-dl">TL; DL <a class="w-headline-link" href="#tl-dl">#</a></h2>
+<h2 id="tl-dr">TL; DR <a class="w-headline-link" href="#tl-dr">#</a></h2>
 <p>대부분의 프로그래밍 언어는 배열을 다루는 기본 API를 제공한다. 다만 언어별로 사용법이 조금씩 다르기 때문에 정확히 알고 사용해야 한다. 우선 각 언어별로 배열을 복사하는 방법에 대해 알아보자.</p>
 <p><a href="https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#copyOfRang(int%5B%5D,%20int,%20int)">자바 API</a> 에서는 <code>java.util.Arrays.copyOfRange</code> 를 사용하여 배열의 일부를 복사할 수 있다.</p>
 <web-copy-code><pre class="language-java"><code class="language-java"><span class="highlight-line"><span class="token comment">// 원래배열 - null 이면 NullPointerException 이 발생한다.</span></span><br><span class="highlight-line"><span class="token comment">// 시작인덱스 - 0 이상 이어야 하고 원래배열의 전체길이보다는 작아야 한다.</span></span><br><span class="highlight-line"><span class="token comment">// 끝인덱스 - 시작인덱스보다 크거나 같아야 한다.</span></span><br><span class="highlight-line"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newArray <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOfRange</span><span class="token punctuation">(</span>원래배열<span class="token punctuation">,</span> 시작인덱스<span class="token punctuation">,</span> 끝인덱스<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
