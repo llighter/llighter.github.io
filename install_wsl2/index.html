@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>Windows 10에 WSL2 설치하기</title>
+<meta name="description" content="Learn how to install ubuntu using wsl2 " />
+
+<meta itemprop="name" content="Windows 10에 WSL2 설치하기" />
+<meta itemprop="description" content="Learn how to install ubuntu using wsl2 " />
+<meta itemprop="image" content="https://llighter.github.io/install_wsl2/hero.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/install_wsl2/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/install_wsl2/hero.png" />
+<meta property="og:image:alt" content="terminal" />
+<meta property="tag" content="blog" />
+<meta property="tag" content="wsl2" />
+<meta property="tag" content="ubuntu" />
+<meta property="tag" content="linux" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Windows 10에 WSL2 설치하기" />
+<meta name="twitter:description" content="Learn how to install ubuntu using wsl2 " />
+<meta name="twitter:image" content="https://llighter.github.io/install_wsl2/hero.png" />
+
+  <meta name="full_width" value="true" />
+  <meta name="theme-color" content="#FFF" />
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
+</head>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
+
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
+
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
+    </div>
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--cover w-hero--center"
+  src="/install_wsl2/hero.png"
+  alt="terminal"
+/>
+  
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <main class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Windows 10에 WSL2 설치하기</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          일반 Windows 10 PC에서 WSL2를 통해 우분투를 설치해보자
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Feb 7, 2021</time>
+          
+        <div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/llighter.jpg"
+    alt="Yunha Park"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yunha Park</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/llighter90">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/llighter">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        <div>
+      
+    </header>
+    <p>지금부터 <a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10">Windows 10에 Linux용 Windows 하위 시스템 설치 가이드</a>를 참고하여 내 윈도우 시스템에 리눅스를 설치해보겠다. 윈도우에 리눅스를 설치해서 사용하려는 이유는 여러가지가 있겠지만 나의 경우는 Windows 10 환경에서 개발을 할 때 설치파일 관리, 경로 설정 등 부가적으로 관리해줘야 하는 요소들이 많아져서 불편함이 많았다. 이를 해결하면서 윈도우에서 터미널을 꾸며 사용하고 싶어서 설치를 하게 되었다.</p>
+<div class="w-aside w-aside--note">
+<p>자신의 윈도우에 WSL2가 이미 설치되어 있거나 이 포스트를 통해 설치한 사용자는 <a href="">윈도우 터미널에 ZSH 설치하기</a>를 통해 터미널을 자신에 맞게 멋지게 바꿔보는걸 추천한다.</p>
+</div>
+<h2 id="wsl2-%EC%88%98%EB%8F%99%EC%84%A4%EC%B9%98-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">WSL2 수동설치 진행하기 <a class="w-headline-link" href="#wsl2-%EC%88%98%EB%8F%99%EC%84%A4%EC%B9%98-%EC%A7%84%ED%96%89%ED%95%98%EA%B8%B0">#</a></h2>
+<p><a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10">설치 가이드</a>에서도 나와있는 것처럼 설치 방법에는 자동설치와 수동설치 둘 중 하나를 선택하여 진행할 수 있는데 앞의 것의 경우  간편하지만 <a href="https://support.microsoft.com/ko-kr/windows/windows-%EC%B0%B8%EA%B0%80%EC%9E%90-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%97%90-%EC%B0%B8%EC%97%AC%ED%95%98%EA%B8%B0-ef20bb3d-40f4-20cc-ba3c-a72c844b563c">Windows 참가자 프로그램</a>에 등록해야하고 특정 빌드 이상으로 업그레이드를 해야하기 때문에 수동 설치로 진행하기로 했다.</p>
+<h3 id="1%EB%8B%A8%EA%B3%84---linux%EC%9A%A9-windows-%ED%95%98%EC%9C%84-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%82%AC%EC%9A%A9">1단계 - Linux용 Windows 하위 시스템 사용 <a class="w-headline-link" href="#1%EB%8B%A8%EA%B3%84---linux%EC%9A%A9-windows-%ED%95%98%EC%9C%84-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%82%AC%EC%9A%A9">#</a></h3>
+<p>우선 WSL2를 사용할 수 있도록 설정해주기 위해 터미널을 <strong>관리자 권한으로 실행</strong> 으로 열어준다.</p>
+<p><img src="1-1.png" alt="image"></p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+나는 <a href="https://docs.microsoft.com/ko-kr/windows/terminal/">windows 터미널</a>을 통해 <a href="https://docs.microsoft.com/ko-kr/powershell/">PowerShell</a>을 실행 시켰는데 아직 windows 터미널이 설치되어 있지 않다면 바로 PowerShell을 관리자 권한으로 실행시키면 된다.</p>
+</div>
+<p>이제 아래 명령어를 통해 <strong>Linux용 Windows 하위 시스템</strong> 옵션 기능을 사용하도록 설정해보자.</p>
+<web-copy-code><pre class="language-powershell"><code class="language-powershell"><span class="highlight-line">dism<span class="token punctuation">.</span>exe <span class="token operator">/</span>online <span class="token operator">/</span><span class="token function">enable-feature</span> <span class="token operator">/</span>featurename:Microsoft<span class="token operator">-</span>Windows<span class="token operator">-</span>Subsystem<span class="token operator">-</span>Linux <span class="token operator">/</span>all <span class="token operator">/</span>norestart</span></code></pre>
+</web-copy-code><p><img src="1-2.png" alt="image"></p>
+<h3 id="2%EB%8B%A8%EA%B3%84---wsl-2-%EC%8B%A4%ED%96%89%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9A%94%EA%B5%AC-%EC%82%AC%ED%95%AD-%ED%99%95%EC%9D%B8">2단계 - WSL 2 실행을 위한 요구 사항 확인 <a class="w-headline-link" href="#2%EB%8B%A8%EA%B3%84---wsl-2-%EC%8B%A4%ED%96%89%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9A%94%EA%B5%AC-%EC%82%AC%ED%95%AD-%ED%99%95%EC%9D%B8">#</a></h3>
+<p>일반적인 윈도우 PC(x64 시스템)의 경우: <strong>버전 1903</strong> 이상, <strong>빌드 18362</strong> 이상에서 WSL2를 설치할 수 있다. 자신의 PC가 이 버전보다 위인지 확인해보자.</p>
+<div class="w-aside w-aside--note">
+<p>버전 및 빌드 번호를 확인하려면 Windows 로고 키 + R 을 선택하고, winver 를 입력하고, 확인한다.</p>
+</div>
+<p><img src="2.png" alt="image"></p>
+<h3 id="3%EB%8B%A8%EA%B3%84---virtual-machine-%EA%B8%B0%EB%8A%A5-%EC%82%AC%EC%9A%A9">3단계 - Virtual Machine 기능 사용 <a class="w-headline-link" href="#3%EB%8B%A8%EA%B3%84---virtual-machine-%EA%B8%B0%EB%8A%A5-%EC%82%AC%EC%9A%A9">#</a></h3>
+<p>자 이제 설치하기 전 마지막 단계이다. <strong>Virtual Machine 플랫폼</strong> 옵션기능을 사용하도록 설정하자. 완료했으면 컴퓨터를 <strong>재부팅</strong> 한다.</p>
+<web-copy-code><pre class="language-powershell"><code class="language-powershell"><span class="highlight-line">dism<span class="token punctuation">.</span>exe <span class="token operator">/</span>online <span class="token operator">/</span><span class="token function">enable-feature</span> <span class="token operator">/</span>featurename:VirtualMachinePlatform <span class="token operator">/</span>all <span class="token operator">/</span>norestart</span></code></pre>
+</web-copy-code><p><img src="3.png" alt="image"></p>
+<h3 id="4%EB%8B%A8%EA%B3%84---linux-%EC%BB%A4%EB%84%90-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C">4단계 - Linux 커널 업데이트 패키지 다운로드 <a class="w-headline-link" href="#4%EB%8B%A8%EA%B3%84---linux-%EC%BB%A4%EB%84%90-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C">#</a></h3>
+<p>자 이제 <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">x64 머신용 최신 WSL2 Linux 커널 업데이트 패키지</a>를 다운 받아보자. 이 링크는 <a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">여기</a>에서도 확인할 수 있다.</p>
+<p>다운 받은 <strong>wsl_update_x64.msi</strong> 파일을 실행하여 설치를 진행한다.</p>
+<p><img src="4-1.png" alt="image"></p>
+<p><img src="4-2.png" alt="image"></p>
+<h3 id="5%EB%8B%A8%EA%B3%84---wsl-2%EB%A5%BC-%EA%B8%B0%EB%B3%B8-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%84%A4%EC%A0%95">5단계 - WSL 2를 기본 버전으로 설정 <a class="w-headline-link" href="#5%EB%8B%A8%EA%B3%84---wsl-2%EB%A5%BC-%EA%B8%B0%EB%B3%B8-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%84%A4%EC%A0%95">#</a></h3>
+<p>자 이제 다시 Posershell로 돌아가서 아래 명령어를 통해 WSL2를 기본버전으로 설정해준다.</p>
+<web-copy-code><pre class="language-powershell"><code class="language-powershell"><span class="highlight-line">wsl <span class="token operator">--</span><span class="token function">set-default</span><span class="token operator">-</span>version 2</span></code></pre>
+</web-copy-code><p><img src="5.png" alt="image"></p>
+<h3 id="6%EB%8B%A8%EA%B3%84---%EC%84%A0%ED%83%9D%ED%95%9C-linux-%EB%B0%B0%ED%8F%AC-%EC%84%A4%EC%B9%98">6단계 - 선택한 Linux 배포 설치 <a class="w-headline-link" href="#6%EB%8B%A8%EA%B3%84---%EC%84%A0%ED%83%9D%ED%95%9C-linux-%EB%B0%B0%ED%8F%AC-%EC%84%A4%EC%B9%98">#</a></h3>
+<p>이제 준비는 끝났다. <a href="https://aka.ms/wslstore">Microsoft Store</a>에서 자신이 원하는 리눅스 버전을 골라서 설치를
+진행하면 되는데 나는 가장 친숙한 Ubuntu를 선택하였다.</p>
+<p><img src="6.png" alt="image"></p>
+<p><img src="6-1.png" alt="image"></p>
+<p><img src="6-2.png" alt="image"></p>
+<p>다운 받고 실행하면 <a href="https://docs.microsoft.com/ko-kr/windows/wsl/user-support">새 Linux 배포에 대한 사용자 계정 및 암호를 만들어야</a> 한다.</p>
+<p><img src="6-3.png" alt="image"></p>
+<p>계정 및 비밀번호를 설정해주면 끝이다. 추가적으로 처음 설치를 하면 패키지 관리자를 업데이트 해주는 것이 좋다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade</span></code></pre>
+</web-copy-code><p>축하합니다. 이제 윈도우에서 <strong>Cmd</strong>를 벗어나 <strong>터미널</strong>로 개발을 시작할 수 있게 됐습니다. 윈도우에서 리눅스 라이프를 즐겨보도록 하죠.</p>
+<p>메인 사진은 <a href="https://unsplash.com/s/photos/terminal?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>에서<a href="https://unsplash.com/@umityildirim?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ümit Yıldırım</a>님이 제공한 사진입니다.</p>
+
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        마지막 업데이트 날짜: <time>Feb 7, 2021</time>
+        
+      </span>
+      <a
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/install_wsl2/index.md"
+      >
+        이 포스트를 개선해주세요!
+      </a>
+    </div>
+
+  </main>
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+<div>
+
+    </div>
+  </main>
+  <footer>
+    <p>© 2021 llighter</p>
+</footer>
+
+  
+  <script type="module" src="/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <title>WSL2 Ubuntu에 ZSH 설치해서 터미널 꾸미기</title>
+<meta name="description" content="Decorate Wsl2 terminal with oh-my-zsh " />
+
+<meta itemprop="name" content="WSL2 Ubuntu에 ZSH 설치해서 터미널 꾸미기" />
+<meta itemprop="description" content="Decorate Wsl2 terminal with oh-my-zsh " />
+<meta itemprop="image" content="https://llighter.github.io/install_zsh_in_wsl2/hero.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://llighter.github.io/install_zsh_in_wsl2/" />
+<meta property="og:site_name" content="Yunha Industries" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="https://llighter.github.io/install_zsh_in_wsl2/hero.png" />
+<meta property="og:image:alt" content="shell" />
+<meta property="tag" content="blog" />
+<meta property="tag" content="zsh" />
+<meta property="tag" content="wsl2" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WSL2 Ubuntu에 ZSH 설치해서 터미널 꾸미기" />
+<meta name="twitter:description" content="Decorate Wsl2 terminal with oh-my-zsh " />
+<meta name="twitter:image" content="https://llighter.github.io/install_zsh_in_wsl2/hero.png" />
+
+  <meta name="full_width" value="true" />
+  <meta name="theme-color" content="#FFF" />
+  <link rel="stylesheet" href="/app.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  <meta name="google-site-verification" content="turRzqtF_SNbSrs1fyPn1i2vB2tEGsdtDkjMARhpD9o" />
+  <script type="module" src="/bootstrap.js"></script>
+</head>
+<body class="unresolved">
+  <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100 hidden"></div>
+  <web-header role="navigation">
+    <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
+
+    <a
+      href="/"
+      class="web-header__logo-link"
+      data-category="Site-Wide Custom Events"
+      data-label="Site logo"
+    >
+      <img class="web-header__logo" src="/images/logo.svg" alt="yunha-ind" />
+    </a>
+
+    <div class="web-header__middle">
+      <div class="web-header__links">
+        <a
+          href="/blog/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: Blog"
+        >
+          Blog
+        </a>
+        <a
+          href="/quicktips/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: tips"
+        >
+          Quick Tips
+        </a>
+        <a
+          href="/resume/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: resume"
+        >
+          Resume
+        </a>
+        <a
+          href="/about/"
+          class="web-header__link"
+          data-category="Site-Wide Custom Events"
+          data-lable="Tab: About"
+        >
+          About
+        </a>
+      </div>
+    </div>
+  </web-header>
+
+  <web-side-nav class="unresolved">
+    <a
+      href="/blog/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      Blog
+    </a>
+    <a
+      href="/quicktips/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Quick Tips"
+    >
+      Quick Tips
+    </a>
+    <a
+      href="/resume/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Resume"
+    >
+      Resume
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      About
+    </a>
+  </web-side-nav>
+  
+  <main>
+    <div id="content">
+      
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--cover w-hero--center"
+  src="/install_zsh_in_wsl2/hero.png"
+  alt="shell"
+/>
+  
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <main class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">WSL2 Ubuntu에 ZSH 설치해서 터미널 꾸미기</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Oh my ZSH을 설치해서 내 터미널을 꾸며보자
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Feb 7, 2021</time>
+          
+        <div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/llighter.jpg"
+    alt="Yunha Park"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yunha Park</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/llighter90">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/llighter">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        <div>
+      
+    </header>
+    <p>리눅스 환경이든 맥 환경이든 개발을 한다면 터미널을 선택이 아닌 필수이다. 4K 모니터에서 검은 배경에 흰 글자만 보고 있는 것보단 이왕이면 다양한 색상과 기능으로 편하고 즐겁게 개발을 하고자 한다면 <strong>ZSH</strong>을  선택해보자.</p>
+<p>윈도우에서 WSL2를 통해 리눅스를 사용하던 일반적인 리눅스를 사용하던 처음 터미널 설정은 <a href="https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)">Bash 쉘</a>로 구성이 되어 있다. 우리는 쉘을 ZSH로 변경하고 커스터마이징을 할 수 있도록 <a href="https://github.com/ohmyzsh/ohmyzsh">Oh my zsh</a>을 설치하고 각종 편의 기능들을 적용해볼 것이다.</p>
+<h2 id="zsh-%EC%84%A4%EC%B9%98">ZSH 설치 <a class="w-headline-link" href="#zsh-%EC%84%A4%EC%B9%98">#</a></h2>
+<p>우분투 패키지 매니저인 <a href="https://ko.wikipedia.org/wiki/%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4%ED%8A%B8_%ED%8C%A8%ED%82%A4%EC%A7%95_%ED%88%B4">apt</a>를 이용하여 <strong>ZSH</strong>을 설치해보자.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">zsh</span></span></code></pre>
+</web-copy-code><p><img src="1.png" alt="image"></p>
+<h3 id="%EA%B8%B0%EB%B3%B8-%EC%89%98%EC%9D%84-zsh%EB%A1%9C-%EB%B3%80%EA%B2%BD">기본 쉘을 ZSH로 변경 <a class="w-headline-link" href="#%EA%B8%B0%EB%B3%B8-%EC%89%98%EC%9D%84-zsh%EB%A1%9C-%EB%B3%80%EA%B2%BD">#</a></h3>
+<p>이제 ZSH이 설치되었으니 기본 쉘을 bash에서 Zsh로 변경해보자. <code>echo $SHELL</code> 명령어를 입력하면 현재 내 터미널에 세팅된 쉘이 무슨 쉘인지 확인할 수 있다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line">chsh -s <span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> <span class="token function">zsh</span><span class="token variable">)</span></span></span></code></pre>
+</web-copy-code><p><img src="2.png" alt="image"></p>
+<p><img src="3.png" alt="image"></p>
+<h2 id="oh-my-zsh-%EC%84%A4%EC%B9%98">Oh My Zsh 설치 <a class="w-headline-link" href="#oh-my-zsh-%EC%84%A4%EC%B9%98">#</a></h2>
+<p>이제 내 입맛에 맞게 터미널을 꾸미기 위해 <a href="https://github.com/ohmyzsh/ohmyzsh">Oh my zsh</a>을 설치해보자. 설치 방법은 앞 링크에 자세히 나와 있고 나의 경우는 <code>curl</code>을 이용하여 설치했다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span></span></code></pre>
+</web-copy-code><p><img src="4.png" alt="image"></p>
+<h3 id="powerlevel10k-%EC%84%A4%EC%B9%98">powerlevel10k 설치 <a class="w-headline-link" href="#powerlevel10k-%EC%84%A4%EC%B9%98">#</a></h3>
+<p><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a>은 Zsh의 테마중 하나이다. 널리 쓰이면서도 유용한 정보를 적재적소에 제공해준다. 이 테마도 설치하는 방법이 여러가지가 있지만 우리는 방금 <strong>Oh my zsh</strong>을 설치했기 때문에 이를 이용하여 설치를 한다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone --depth<span class="token operator">=</span><span class="token number">1</span> https://github.com/romkatv/powerlevel10k.git <span class="token variable">${ZSH_CUSTOM<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom}</span>/themes/powerlevel10k</span></code></pre>
+</web-copy-code><p><img src="5.png" alt="image"></p>
+<h3 id="zsh%EC%97%90-%ED%85%8C%EB%A7%88-%EC%A0%81%EC%9A%A9">Zsh에 테마 적용 <a class="w-headline-link" href="#zsh%EC%97%90-%ED%85%8C%EB%A7%88-%EC%A0%81%EC%9A%A9">#</a></h3>
+<p>자 이제 방금 받은 테마를 우리 쉘에 적용해보자. Zsh은 홈디렉토리에 설정파일은 가지고 있는데 이 파일을 수정해줘야 한다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token comment"># 홈 디렉토리로 이동</span></span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> ~</span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment"># 설정파일 오픈</span></span><br><span class="highlight-line"><span class="token function">vi</span> ~/.zshrc</span></code></pre>
+</web-copy-code><p>자 <a href="https://ko.wikipedia.org/wiki/Vi">vi</a> 이용법에 대한 것은 인터넷에 좋은 자료가 많기 때문에 여기서는 필요한 부분만 간단히 설명하기로 하자.</p>
+<p>처음 vi 에디터로 설정파일(<code>.zshrc</code>)을 열면 명령모드 상태일 것이다. 혹시 입력모드이면 <code>ESC</code> 키를 눌러서 명령모드로 빠져나오도록 하자. 이제 우리가 수정할 위치를 찾아서 입력모드로 수정한다음 저장을 할 것이다. 명령어는 아래와 같다.</p>
+<ol>
+<li><code>/ZSH_THEME</code> 입력 후 엔터</li>
+<li><code>i</code>로 입력모드로 변경 한 후 기존 입력 값을 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k</code> 로 수정</li>
+<li><code>ESC</code>로 명령모드로 전환</li>
+<li><code>wq</code> 입력 후 엔터를 눌러 저장</li>
+</ol>
+<p><img src="6.png" alt="image"></p>
+<p>자, 설정파일은 수정되었다. 설정은 자동으로 적용되지 않기 때문에 쉘을 재시작하거나 적용 명령어를 입력해줘야 한다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token builtin class-name">source</span> ~/.zshrc</span></code></pre>
+</web-copy-code><p><img src="7.png" alt="image"></p>
+<p>적용후에는 각종 설정들을 보기 형태로 묻고 내가 선택한대로 세팅이 진행된다. 세팅을 선호의 영역이기 때문에 정답은 없다. 좋아 보이는 것을 따라가자.</p>
+<p>아래는 내가 적용한 테마이다.</p>
+<p><img src="8.png" alt="image"></p>
+<h2 id="%EC%9C%A0%EC%9A%A9%ED%95%9C-zsh-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EB%93%A4-%EC%84%A4%EC%B9%98">유용한 Zsh 플러그인들 설치 <a class="w-headline-link" href="#%EC%9C%A0%EC%9A%A9%ED%95%9C-zsh-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EB%93%A4-%EC%84%A4%EC%B9%98">#</a></h2>
+<p>Zsh 안에서는 터미널을 편리하게 이용할 수 있는 여러 플러그인들을 설치할 수 있는데 여기서는 3가지 정도를 설치해보자.</p>
+<h3 id="zsh-authsuggestions-%EC%84%A4%EC%B9%98">zsh-authsuggestions 설치 <a class="w-headline-link" href="#zsh-authsuggestions-%EC%84%A4%EC%B9%98">#</a></h3>
+<p><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-authsuggestions</a>은 내가 사용한 기록을 기반으로 입력값을 추천해주는 플러그인이다. 이 플러그인만 있다면 한번 입력한 명령어는 다시 찾아볼 일이 없다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-autosuggestions <span class="token variable">${ZSH_CUSTOM<span class="token operator">:-</span>~<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom}</span>/plugins/zsh-autosuggestions</span></code></pre>
+</web-copy-code><p>적용 방법은 위에서 테마를 적용할 때와 같이 <code>.zshrc</code> 파일을 수정한 다음 적용하는 순으로 진행한다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token comment"># 홈 디렉토리로 이동</span></span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> ~</span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment"># 설정파일 오픈</span></span><br><span class="highlight-line"><span class="token function">vi</span> ~/.zshrc</span></code></pre>
+</web-copy-code><ol>
+<li><code>/plugins</code> 입력 후 엔터</li>
+<li><code>i</code>로 입력모드로 변경 한 후 <code>plugins=(git zsh_autosuggestions)</code> 로 수정</li>
+<li><code>ESC</code>로 명령모드로 전환</li>
+<li><code>wq</code> 입력 후 엔터를 눌러 저장</li>
+</ol>
+<p><img src="9.png" alt="image"></p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+2번에서 <code>plugins=(git zsh_autosuggestions)</code> 입력값을 아무것도 설치안했다면 <code>plugins=(git)</code> 이었을 것이다.
+여기에 <strong>zsh_autosuggestions</strong> 문구만 추가해주면 된다.</p>
+</div>
+<p>설정을 적용해주자.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token builtin class-name">source</span> ~/.zshrc</span></code></pre>
+</web-copy-code><h3 id="zsh-syntax-highlighting-%EC%84%A4%EC%B9%98">zsh-syntax-highlighting 설치 <a class="w-headline-link" href="#zsh-syntax-highlighting-%EC%84%A4%EC%B9%98">#</a></h3>
+<p>자 이제 터미널을 다채롭게 해보자. 각종 명령어들을 색을 칠해 구분하게 해주고 틀린 명령어를 구분할 수 있게 해주는 <a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> 플러그인 이다.</p>
+<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md">설치 매뉴얼</a>을 따라 설치해보자.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="highlight-line"><span class="token builtin class-name">echo</span> <span class="token string">"source <span class="token variable">${(q-)PWD}</span>/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"</span> <span class="token operator">>></span> <span class="token variable">${ZDOTDIR<span class="token operator">:-</span>$HOME}</span>/.zshrc</span></code></pre>
+</web-copy-code><p>플러그인을 적용해보자.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token builtin class-name">source</span> ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span></code></pre>
+</web-copy-code><p>적용한 결과이다. 보기 편하지 않은가?</p>
+<p><img src="11.png" alt="image"></p>
+<h3 id="zsh-z-%EC%84%A4%EC%B9%98">zsh-z 설치 <a class="w-headline-link" href="#zsh-z-%EC%84%A4%EC%B9%98">#</a></h3>
+<p><a href="https://github.com/agkozak/zsh-z">zsh-z</a>은 터미널에서 디렉토리를 이동할 때 편리한 플러그인이다. 여러번 입력했던 디렉토리를 기억해서 어느 위치에서건 최종 디렉토리 명을 <code>z some-directory</code>와 같이 입력하면 바로 이동할 수 있다.</p>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone https://github.com/agkozak/zsh-z <span class="token variable">$ZSH_CUSTOM</span>/plugins/zsh-z</span></code></pre>
+</web-copy-code><web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token comment"># 홈 디렉토리로 이동</span></span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> ~</span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment"># 설정파일 오픈</span></span><br><span class="highlight-line"><span class="token function">vi</span> ~/.zshrc</span></code></pre>
+</web-copy-code><p>적용 방법은 위에서 테마를 적용할 때와 같이 <code>.zshrc</code> 파일을 수정한 다음 적용하는 순으로 진행한다.</p>
+<ol>
+<li><code>/plugins</code> 입력 후 엔터</li>
+<li><code>i</code>로 입력모드로 변경 한 후 <code>plugins=(git zsh_autosuggestions z)</code> 로 수정</li>
+<li><code>ESC</code>로 명령모드로 전환</li>
+<li><code>wq</code> 입력 후 엔터를 눌러 저장</li>
+</ol>
+<web-copy-code><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token builtin class-name">source</span> ~/.zshrc</span></code></pre>
+</web-copy-code><p><img src="12.png" alt="image"></p>
+<h2 id="windows-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EC%83%89-%EA%B5%AC%EC%84%B1%ED%91%9C-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">Windows 터미널에서 색 구성표 적용하기 <a class="w-headline-link" href="#windows-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EC%83%89-%EA%B5%AC%EC%84%B1%ED%91%9C-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">#</a></h2>
+<p>자, 여기까지 왔으면 기능상 기본적인 세팅은 모두 완료되었다. 마지막을 윈도우에서 할 수 있는 설정 하나 더 알려주며 이 포스트를 마친다.</p>
+<p><a href="https://docs.microsoft.com/ko-kr/windows/terminal/customize-settings/color-schemes">Windows 터미널의 색 구성표</a>에서 보이는바와 같이 터미널에 색 구성표를 적용하여 여러가지 색을 적용할 수 있다. 난 <strong>One Half Dark</strong> 를 선택했다 아래와 같이 적용해주면 된다.</p>
+<p><img src="14.png" alt="image"></p>
+<div class="w-aside w-aside--note">
+<p>Windows 터미널에는 <code>alt</code>를 누르고 설정 단추를 선택하여 액세스할 수 있는 <code>defaults.json</code> 파일 내에 이러한 색 구성표가 포함되어 있습니다. 명령줄 프로필 중 하나에서 색 구성표를 설정하려면 색 구성표의 name을 값으로 사용하여 colorScheme 속성을 추가합니다.</p>
+</div>
+<h2 id="%EC%A0%95%EB%A6%AC%ED%95%98%EB%A9%B0">정리하며... <a class="w-headline-link" href="#%EC%A0%95%EB%A6%AC%ED%95%98%EB%A9%B0">#</a></h2>
+<p>이제 윈도우에서도 맥이나 리눅스에서와 같이 화려한 터미널 라이프를 즐길 수 있게 되었다. 터미널은 꾸미기 시작하면 끝이 없기 때문에 어느정도 세팅이 되었다 싶으면 사용하면서 하나하나 자기 자신에게 맞는 설정들을 추가해가는 것이 바람직하다. 나 또한 더 좋은 기능들이나 세팅이 있다면 여기에 업데이트 해두려고 한다.</p>
+<p>메인 사진은 <a href="https://unsplash.com/s/photos/shell?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>에서<a href="https://unsplash.com/@mattartz?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Matt Artz</a>님이 제공한 사진입니다.</p>
+
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        마지막 업데이트 날짜: <time>Feb 7, 2021</time>
+        
+      </span>
+      <a
+        href="https://github.com/llighter/yunha-ind/blob/master/src/site/content/blog/install_zsh_in_wsl2/index.md"
+      >
+        이 포스트를 개선해주세요!
+      </a>
+    </div>
+
+  </main>
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+<div>
+
+    </div>
+  </main>
+  <footer>
+    <p>© 2021 llighter</p>
+</footer>
+
+  
+  <script type="module" src="/bootstrap.js"></script>
+</body>
+
+</html>
